@@ -3,7 +3,7 @@ import { createContext, PropsWithChildren, useState } from "react";
 import { LoginForm } from "../types/Login.Form.Type";
 import { RegisterForm } from "../types/Register.Form.Type";
 import { AuthContextType } from "../types/Auth.Context.type";
-import { backendFetch } from "../rest/backendFetch";
+import { backendFetch } from "../services/api";
 
 export const AuthContext = createContext<AuthContextType>({
   login: async (data: LoginForm) => false,
