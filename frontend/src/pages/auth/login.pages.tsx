@@ -1,8 +1,8 @@
 import { useContext, useState } from "react"
 //import './login.css'
-import { LoginForm } from "../types/Login.Form.Type";
 import { Link } from "react-router";
-import { AuthContext } from "../providers/Auth.Provider";
+import { LoginForm } from "../../types/Login.Form.Type";
+import { AuthContext } from "../../context/Auth.Provider";
 
 export function LoginPages() {
   const [email, setEmail]= useState('');

@@ -3,10 +3,12 @@ import dotenv from "dotenv";
 import expressSession from "express-session";
 import cors from "cors";
 import expressWs from 'express-ws';
+import { addWsRoutes } from "./routes-websocket/index-websocket";
+import addRoutes from "./routes-express/index-express";
 
 dotenv.config();
 
-const port = process.env.PORT;
+const port = process.env.PORT; 
 
 if (process.env.SESSION_SECRET === undefined) {
   throw new Error("Define SESSION_SECRET");
@@ -64,6 +66,10 @@ appws.app.ws('/websocket', (ws, req, res) => {
     console.error('ERROR', error);
   })
 })
+
+
+addRoutes(app);
+addWsRoutes(app);
 
 app.listen(port, () => {
   console.log(`Server in ascolto sulla porta ${port}`)

@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { FormEventHandler, useContext, useState } from "react";
 //import "./register.css";
-import { AuthContext } from "../providers/Auth.Provider";
 import { Link } from "react-router";
+import { AuthContext } from "../../context/Auth.Provider";
 
 export function RegisterPages() {
   const { register } = useContext(AuthContext);
